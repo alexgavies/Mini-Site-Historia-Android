@@ -1,0 +1,205 @@
+@charset "UTF8";/*regra para suporte de acentuação*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*regra para imbesamento e importação de fontes da net  */
+
+@font-face {
+    font-family: 'android';
+    src: url('./fontes/idroid.otf')format('opentype');
+    font-weight: normal;
+    /*regra para importação de fonte de banco de dados*/
+}
+
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83c780;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #064928;
+    --font-padrao: arial, verdana, helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', 'cursive';
+    --fonte-android: 'android', 'cursivo';
+    /*root, configurações de variaves de cores e fontes*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* regra global*/
+}
+
+body {
+    background-color:  var(--cor0);
+    font-family: var(--font-padrao);
+    min-width: 280px;
+    
+}
+
+header {
+    background-image: linear-gradient(180deg, var(--cor3),var(--cor5));
+    text-align: center;
+    min-height: 150px;
+}
+
+header h1 {
+    font-family: var(--fonte-destaque);
+    color: white;
+    padding: 30px; 
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.411);
+}
+
+header>p {
+    font-family: var(--font-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.336);
+}
+nav>a{
+    color: var(--cor1);
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover{
+    background-color: var(--cor4);
+    color: var(--cor2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px ;
+}
+
+nav .m{
+    display: none;
+}
+main {
+    background-color: white;
+    max-width: 800px;
+    min-width: 280px;
+    padding: 20;
+    margin-bottom: 30px;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);
+}
+
+main p{
+    margin: 15px 0px 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.2em;
+}
+
+main strong{
+    color: var(--cor5);
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+main h1 {
+    font-family: var(--fonte-android);
+    color: var(--cor5);
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(45deg, #2fa866,#c5ebd6,white);
+}
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    min-width: auto;
+}
+
+div.video{
+    background-color:var(--cor5);
+    max-width: 800px;
+    min-width: auto;
+    margin-bottom: 30px;
+    margin: 0px px 30px px;
+    padding: 20px;
+    position: relative;/*gamgiarra para responsividade do video*/
+    padding-bottom: 57%;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor0);
+    border-radius: 5px;
+    text-align: justify;
+    max-width: 856px;
+    min-width: auto;
+}
+
+aside h3 {
+    font-family: var(--font-padrao);
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    background-color: var(--cor4);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+aside p{
+    padding: 5px;
+}
+
+aside ul{
+    list-style-type:'\2714\00a0';/*00a0 é o espaço para o list-style-type*/
+    list-style-position: inside;/* incluir a marcaçãoda lsta na div*/
+    columns: 2;
+
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    margin-right: auto;
+}
+
+footer a{
+    color: rgb(11, 224, 240);
+    text-decoration: none;
+}
+footer a::after{ /* é nessesario usar :: pseudo class para ativar o after que é = depois */
+    content: '\00a0\1f517';
+}
+footer a:hover{
+    text-decoration: underline;
+    
+}
+@media (max-width:431px) {
+    nav .m{
+        display: flex;
+        justify-content: center;
+    }
+    .z{
+        display: none;
+    }
+}
